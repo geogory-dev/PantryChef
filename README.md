@@ -356,6 +356,41 @@ This project uses environment variables to keep API keys secure:
 - Meal history
 - Visual progress tracking
 
+## 📸 App Screenshots
+
+### 🏠 Home Screen
+![Home Screen](screenshots/HomeScreen.png)
+*Multi-select cuisine types, meal preferences, dietary needs, and cooking time filters*
+
+### 🎲 Recipe Selection  
+![Recipe Selection](screenshots/Recipes.png)
+*View 3-10 AI-generated recipe options at once with photos and descriptions*
+
+### 📖 Recipe Details
+![Recipe Details - Light](screenshots/RecipeDetails.png)
+![Recipe Details - Dark](screenshots/RecipeDetails2.png)
+*Beautiful food photography, AI-estimated nutrition, health scores, and step-by-step instructions*
+
+### 📚 Cookbook
+![Cookbook](screenshots/Cookbook.png)
+*Saved recipes collection with search, filtering, and rating capabilities*
+
+### 📅 Meal Planner
+![Meal Planner](screenshots/MealPlanning.png)
+*Weekly calendar view with drag-and-drop meal scheduling*
+
+### 🛒 Shopping List
+![Shopping List](screenshots/ShoppingList.png)
+*Auto-generated shopping lists grouped by recipe with check-off system*
+
+### 📊 Food Diary
+![Food Diary](screenshots/FoodDiary.png)
+*Meal tracking with photo logging and daily calorie monitoring*
+
+### 🌙 Dark Mode Support
+![Dark Mode](screenshots/DarkModeHomeScreen.png)
+*Full dark theme support across all screens for comfortable evening cooking*
+
 ---
 
 **Status**: ✅ Production Ready | 🚀 Fully Functional

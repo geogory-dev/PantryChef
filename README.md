@@ -359,36 +359,36 @@ This project uses environment variables to keep API keys secure:
 ## 📸 App Screenshots
 
 ### 🏠 Home Screen
-![Home Screen](screenshots/HomeScreen.png)
+<img src="screenshots/HomeScreen.png" alt="Home Screen" width="280">
 *Multi-select cuisine types, meal preferences, dietary needs, and cooking time filters*
 
 ### 🎲 Recipe Selection  
-![Recipe Selection](screenshots/Recipes.png)
+<img src="screenshots/Recipes.png" alt="Recipe Selection" width="280">
 *View 3-10 AI-generated recipe options at once with photos and descriptions*
 
 ### 📖 Recipe Details
-![Recipe Details - Light](screenshots/RecipeDetails.png)
-![Recipe Details - Dark](screenshots/RecipeDetails2.png)
+<img src="screenshots/RecipeDetails.png" alt="Recipe Details - Light" width="280">
+<img src="screenshots/RecipeDetails2.png" alt="Recipe Details - Dark" width="280">
 *Beautiful food photography, AI-estimated nutrition, health scores, and step-by-step instructions*
 
 ### 📚 Cookbook
-![Cookbook](screenshots/Cookbook.png)
+<img src="screenshots/Cookbook.png" alt="Cookbook" width="280">
 *Saved recipes collection with search, filtering, and rating capabilities*
 
 ### 📅 Meal Planner
-![Meal Planner](screenshots/MealPlanning.png)
+<img src="screenshots/MealPlanning.png" alt="Meal Planner" width="280">
 *Weekly calendar view with drag-and-drop meal scheduling*
 
 ### 🛒 Shopping List
-![Shopping List](screenshots/ShoppingList.png)
+<img src="screenshots/ShoppingList.png" alt="Shopping List" width="280">
 *Auto-generated shopping lists grouped by recipe with check-off system*
 
 ### 📊 Food Diary
-![Food Diary](screenshots/FoodDiary.png)
+<img src="screenshots/FoodDiary.png" alt="Food Diary" width="280">
 *Meal tracking with photo logging and daily calorie monitoring*
 
 ### 🌙 Dark Mode Support
-![Dark Mode](screenshots/DarkModeHomeScreen.png)
+<img src="screenshots/DarkModeHomeScreen.png" alt="Dark Mode" width="280">
 *Full dark theme support across all screens for comfortable evening cooking*
 
 ---

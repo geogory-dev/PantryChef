@@ -3,7 +3,6 @@
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 ![Unsplash](https://img.shields.io/badge/Unsplash-000000?style=for-the-badge&logo=unsplash&logoColor=white)
 
 An AI-powered mobile cooking companion that transforms your available ingredients into delicious, personalized recipes.
@@ -14,17 +13,15 @@ PantryChef helps you discover what to cook based on what you already have. Simpl
 
 ## 📊 Project Metrics
 
-- 📱 **8 Fully-Functional Screens** with modern UI/UX (including authentication)
+- 📱 **8 Fully-Functional Screens** with modern UI/UX
 - 🤖 **AI-Powered Recipe Generation** using OpenAI GPT-4o-mini
-- 🔐 **Complete Authentication System** with email/password and Google sign-in
-- ☁️ **Cloud Data Synchronization** with Firebase Firestore
+- 🔐 **Complete Authentication System** with email/password and Google sign-in (offline mode)
 - 🌙 **Complete Dark Mode Implementation** across all screens
 - 📸 **Professional Food Photography** via Unsplash API
 - 📊 **6+ Core Features**: Meal planning, shopping lists, food diary, cookbook, nutrition tracking, user profiles
 - 🎨 **Modern Design System** with Poppins typography and custom color palette
-- 💾 **Local & Cloud Data Persistence** with offline-first architecture
+- 💾 **Local Data Persistence** with offline-first architecture
 - 🔧 **Clean Architecture** with service-based design pattern
-- 🚀 **Enterprise-Ready Features**: User management, data backup, cross-device sync
 
 ## Features
 
@@ -54,12 +51,11 @@ PantryChef helps you discover what to cook based on what you already have. Simpl
 - **Smart Grouping**: Ingredients organized by recipe source
 - **Check-off System**: Track purchased items with visual feedback
 
-### 👤 User Authentication & Cloud Sync
-- **Secure Authentication**: Email/password and Google sign-in options
-- **Cloud Data Sync**: Automatic synchronization across devices
+### 👤 User Authentication
+- **Secure Authentication**: Email/password and Google sign-in options (offline mode)
 - **User Profiles**: Personalized preferences and dietary restrictions
-- **Offline Support**: Works offline with automatic cloud backup
-- **Data Persistence**: Recipes, meal plans, and shopping lists saved to cloud
+- **Offline Support**: Works completely offline with local data storage
+- **Data Persistence**: Recipes, meal plans, and shopping lists saved locally
 
 ### 📊 Food Diary
 - **Meal Tracking**: Log breakfast, lunch, dinner, and snacks
@@ -279,11 +275,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **Unsplash API** - High-quality food photography integration
 - **HTTP Client** - Robust API communication with error handling
 
-### Authentication & Cloud Services
-- **Firebase Authentication** - Secure user authentication with multiple providers
-- **Cloud Firestore** - Real-time cloud database with offline support
-- **Google Sign-In** - Seamless OAuth integration
-- **Cloud Sync** - Automatic data synchronization across devices
+### Authentication & Data Services
+- **Local Authentication** - Secure user authentication with offline support
+- **Local Storage** - Device-based data persistence
+- **Offline Mode** - Complete functionality without internet connection
 
 ### State Management & Architecture
 - **Provider Pattern** - Reactive state management with clean separation
@@ -292,8 +287,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ### Storage & Persistence
 - **SharedPreferences** - Local data persistence for offline functionality
-- **Cloud Storage** - User data backup and cross-device sync
 - **JSON Serialization** - Efficient data modeling and parsing
+- **Local Database** - Device-based recipe and user data storage
 
 ### UI/UX & Design
 - **Google Fonts (Poppins)** - Modern typography system

@@ -5,7 +5,6 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'theme/app_theme.dart';
 import 'providers/theme_provider.dart';
 import 'providers/auth_provider.dart';
-import 'config/firebase_config.dart';
 import 'screens/welcome_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/login_screen.dart';
@@ -13,6 +12,7 @@ import 'screens/cookbook_screen_enhanced.dart';
 import 'screens/shopping_list_screen.dart';
 import 'screens/meal_planning_screen.dart';
 import 'screens/user_profile_screen.dart';
+import 'screens/food_diary_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,8 +20,7 @@ Future<void> main() async {
   // Load environment variables from .env file
   await dotenv.load(fileName: ".env");
   
-  // Initialize Firebase
-  await FirebaseConfig.initializeFirebase();
+  // Firebase initialization removed for now
   
   runApp(
     MultiProvider(
@@ -100,7 +99,7 @@ class _PantryChefAppState extends State<PantryChefApp> {
         '/cookbook': (context) => const CookbookScreenEnhanced(),
         '/shopping-list': (context) => const ShoppingListScreen(),
         '/meal-planning': (context) => const MealPlanningScreen(),
-        '/food-diary': (context) => const FoodDiaryScreen(),
+        '/food-diary': (context) => FoodDiaryScreen(),
       },
     );
   }
@@ -110,11 +109,7 @@ class _PantryChefAppState extends State<PantryChefApp> {
       return const WelcomeScreen();
     }
     
-    // Check if user is authenticated
-    if (FirebaseConfig.isLoggedIn) {
-      return const HomeScreen();
-    } else {
-      return const LoginScreen();
-    }
+    // Show login screen (Firebase removed for now)
+    return const LoginScreen();
   }
 }

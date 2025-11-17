@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../providers/auth_provider.dart';
 import '../providers/theme_provider.dart';
-import '../config/firebase_config.dart';
 import '../theme/app_theme.dart';
 
 class UserProfileScreen extends StatefulWidget {

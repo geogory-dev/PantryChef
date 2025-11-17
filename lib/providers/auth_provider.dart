@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import '../models/user_profile.dart';
-import '../services/auth_service.dart';
 
 class AuthProvider with ChangeNotifier {
   UserProfile? _user;
@@ -15,33 +14,10 @@ class AuthProvider with ChangeNotifier {
 
   // Initialize auth state listener
   void initialize() {
-    AuthService.authStateChanges.listen((User? firebaseUser) {
-      if (firebaseUser != null) {
-        _loadUserProfile(firebaseUser.uid);
-      } else {
-        _user = null;
-        notifyListeners();
-      }
-    });
-  }
-
-  // Load user profile from Firestore
-  Future<void> _loadUserProfile(String uid) async {
-    try {
-      _isLoading = true;
-      _errorMessage = null;
-      notifyListeners();
-
-      UserProfile? userProfile = await AuthService.getUserProfile(uid);
-      if (userProfile != null) {
-        _user = userProfile;
-      }
-    } catch (e) {
-      _errorMessage = e.toString();
-    } finally {
-      _isLoading = false;
-      notifyListeners();
-    }
+    // Firebase removed - initialize without auth listener
+    _user = null;
+    _isLoading = false;
+    _errorMessage = null;
   }
 
   // Email/Password Sign Up
@@ -51,7 +27,23 @@ class AuthProvider with ChangeNotifier {
       _errorMessage = null;
       notifyListeners();
 
-      _user = await AuthService.signUpWithEmail(email, password, displayName: displayName);
+      // Firebase removed - simulate successful signup
+      await Future.delayed(const Duration(seconds: 1));
+      
+      // Create mock user profile
+      _user = UserProfile(
+        uid: 'mock_${DateTime.now().millisecondsSinceEpoch}',
+        email: email,
+        displayName: displayName ?? email.split('@')[0],
+        photoURL: null,
+        createdAt: DateTime.now(),
+        lastLogin: DateTime.now(),
+        dietaryPreferences: [],
+        favoriteCuisines: [],
+        preferences: {},
+        isEmailVerified: false,
+      );
+      
       return true;
     } catch (e) {
       _errorMessage = e.toString();
@@ -69,7 +61,23 @@ class AuthProvider with ChangeNotifier {
       _errorMessage = null;
       notifyListeners();
 
-      _user = await AuthService.signInWithEmail(email, password);
+      // Firebase removed - simulate successful login
+      await Future.delayed(const Duration(seconds: 1));
+      
+      // Create mock user profile
+      _user = UserProfile(
+        uid: 'mock_${DateTime.now().millisecondsSinceEpoch}',
+        email: email,
+        displayName: email.split('@')[0],
+        photoURL: null,
+        createdAt: DateTime.now(),
+        lastLogin: DateTime.now(),
+        dietaryPreferences: [],
+        favoriteCuisines: [],
+        preferences: {},
+        isEmailVerified: false,
+      );
+
       return true;
     } catch (e) {
       _errorMessage = e.toString();
@@ -87,7 +95,23 @@ class AuthProvider with ChangeNotifier {
       _errorMessage = null;
       notifyListeners();
 
-      _user = await AuthService.signInWithGoogle();
+      // Firebase removed - simulate successful Google login
+      await Future.delayed(const Duration(seconds: 1));
+      
+      // Create mock user profile
+      _user = UserProfile(
+        uid: 'mock_google_${DateTime.now().millisecondsSinceEpoch}',
+        email: 'user@gmail.com',
+        displayName: 'Google User',
+        photoURL: null,
+        createdAt: DateTime.now(),
+        lastLogin: DateTime.now(),
+        dietaryPreferences: [],
+        favoriteCuisines: [],
+        preferences: {},
+        isEmailVerified: true,
+      );
+
       return true;
     } catch (e) {
       _errorMessage = e.toString();
@@ -104,7 +128,7 @@ class AuthProvider with ChangeNotifier {
       _isLoading = true;
       notifyListeners();
 
-      await AuthService.signOut();
+      // Firebase removed - just clear user state
       _user = null;
       _errorMessage = null;
     } catch (e) {
@@ -122,7 +146,9 @@ class AuthProvider with ChangeNotifier {
       _errorMessage = null;
       notifyListeners();
 
-      await AuthService.sendPasswordResetEmail(email);
+      // Firebase removed - simulate password reset
+      await Future.delayed(const Duration(seconds: 1));
+      print('Password reset email sent to: $email');
       return true;
     } catch (e) {
       _errorMessage = e.toString();
@@ -148,16 +174,15 @@ class AuthProvider with ChangeNotifier {
       _errorMessage = null;
       notifyListeners();
 
-      UserProfile updatedProfile = _user!.copyWith(
+      // Firebase removed - update local user profile
+      _user = _user!.copyWith(
         displayName: displayName,
         photoURL: photoURL,
         dietaryPreferences: dietaryPreferences,
         favoriteCuisines: favoriteCuisines,
         preferences: preferences,
       );
-
-      await AuthService.updateUserProfile(updatedProfile);
-      _user = updatedProfile;
+      
       return true;
     } catch (e) {
       _errorMessage = e.toString();
@@ -177,7 +202,8 @@ class AuthProvider with ChangeNotifier {
   // Refresh user profile
   Future<void> refreshUserProfile() async {
     if (_user != null) {
-      await _loadUserProfile(_user!.uid);
+      // Firebase removed - no remote profile to refresh
+      print('Profile refresh (offline mode)');
     }
   }
 }

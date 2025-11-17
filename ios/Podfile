@@ -1,0 +1,32 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '12.0'
+
+# CocoaPods analytics sends network requests periodically when you run `pod install`.
+# To disable this, uncomment the following line.
+# ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+
+# Uncomment this line if you're using Swift or would like to use dynamic frameworks
+# use_frameworks!
+
+# Prevent CocoaPods from embedding a duplicate PBXCopyFilesBuildPhase
+# for each target in the project.
+install! 'cocoapods', :deterministic_uuids => false
+
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+    
+    # Fix for Firebase iOS SDK
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+    end
+  end
+end

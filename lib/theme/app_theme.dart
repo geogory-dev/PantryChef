@@ -47,6 +47,11 @@ class AppRadius {
 }
 
 class AppTheme {
+  // Static color access for convenience
+  static const Color accentColor = AppColors.accent;
+  static const Color textPrimary = AppColors.textPrimary;
+  static const Color textSecondary = AppColors.textSecondary;
+
   static ThemeData get lightTheme {
     return ThemeData(
       brightness: Brightness.light,
